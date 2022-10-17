@@ -1,0 +1,573 @@
+MLF - Ladder Filter
+WTO - Wavetable Oscillator
+WT  - General wavetable
+ECA - Simple ADSR Envolope controlled VCA
+ENV - AHDSR Envelope
+LFS - Low Frequency Shaper - Shape based LFO/Envelope
+BRM - Balanced Ring Modulator
+BQF - Biquad Filter
+CMP - compressor
+RNG - Random Note Gnerator
+DST - Distortion
+DLY - Delay
+
+SYS - System related information
+SET - Settings
+INP - Inputs
+PCH - Patch menu
+
+==
+Please watch introductory videos at: 
+https://www.youtube.com/playlist?list=PLn4dQ5nT5yxFH9R5nt0X9lMtQl5h2CFW6
+
+Please see attached PDF manuals
+
+v2.1.3x
+[DRC] Overlay was not showing
+[DRC] Added Gate button to waveform selector
+[CLK] Graph blinking to BPM not to CLK rate
+[ARP] Added setting to switch between fixed pattern or note length
+[VCF] Removed DL, MG, LD, OP filters (JP Only)
+[VCF] Rescaled BQ and COMB to full frequency
+
+v2.1.30
+[INP] Inputs follow kobs configuration
+[VCF] Filters displays have been normalised
+
+v2.1.21
+[CLK] Added 16 and 8 CPQN clocks
+[SYS] Added 16 and 8 CPQN clocks
+
+v2.1.20
+[INP] Knobs in assign mode were not subject to new Settings
+
+v2.1.18
+[INP] Proper naming of input names for multiple inputs with same name
+[SYS] Pots behaviour configuration (see users-manual.pdf System Settings)
+[VCF] Filter curve display modifications
+
+v2.1.6
+[EUC] Better offset management
+[EUC] Fix for 1/64th note length
+[CLK] (NEW) Output of clock to Audio Outoput  (see users-manual.pdf)
+[CLK] (NEW) External Clock Input (see users-manual.pdf)
+[CLK] (NEW) BPM Sync (see users-manual.pdf)
+
+
+v2.1.0
+[SYS] Chnaged *Reverese Encoder* setting bahaviour. Now select from 4 modes. Also before not all settings affected.
+[PCH] Colour changes
+[SYS] Cleanup of setting saving
+[SYS] Fixed buf for controlling Audio Output Destination from Patch (Edit) Menu
+[OUT] Fixed blown-out channel when audio level exceeded expected range.
+[OUT] Added Limiter Release control speed
+[DRC] Fixed Drum Rack Mdoule (see users-manual.pdf)
+[WTO] Increased quality of wavetable reproducition in Smoothing Mode (Slow)
+[EUC] Removed reset of rhythms upon change of number of elements or offset
+[ECA] ECA has been deprecated (use ENV + VCA instead) will be removed in next version
+[PLY] Added display of number of steps
+
+v2.0.15
+[ARP] Added position control via external CV source (ignores all other settings)
+[GAT] Added tiny indicators for gate positions
+[QNT] Removed debug scales
+
+v2.0.0
+[SYS] Added File loding progress indicator for lengthy operations
+[SYS] Improved UI performance
+[ARP] Added Arpeggiator (see users-manual.pdf)
+[SYS] Fixed conversion of notes to volatge 
+[EUC] Fixed Note lengths
+[SYS] Fixed crash in filebrowser in certain scenarios
+[VCF] Proper Note and CV Tracking
+[SYS] Properly adjusted relationships between MIDI notes and Control Voltages
+[SMP] Fixed clipping during pitch conversion
+[DLY] Fixed clipping in some instances
+[SYS] Changed VXP (Patch) fileformat to JSON
+[LFS] Change of frequency visible when OSC not running
+[LFS] Brand new shape editor (see users-manual.pdf)
+[STO] Reworked big part of storing preset
+[NOI] Limited range of filter frequencies
+
+v1.99.23
+[QNT] Added Key for predefined scales. Use L8 to change Key
+[QNT] Use A8 to change CV input for quantiser
+[PLY] Added Polyrhythm module (see users_manual.pdf)
+[WTO] Fixed buffer overflow for very long tables
+[ENV] Added Trigger mode for AHDR (AD) envelopes
+[INP] Fixed problem with FINE NOTE control
+
+v1.99.19 **BREAKS PATCHES READ BELOW**
+[WTO] V/OCT inputs were giving note 0 for 0V. Changed to note 60 (Middle C). **THIS BREAKS PATCHES**
+[WTO] Coarse frequency was adjusting notes 0-64. Changed to -12 to 12 semitones (+/- one octave)
+[WTO] Fine Frequency now adjusts cents in range of +/- one semitone
+
+v1.99.18
+[LFS] Fixed Frequency Fine for adjusting frequency of LFS
+[SYS] Settings were only saved on exit from System. Now saved on exit from Settings.
+[SYS] Spelling mistake
+[VCA] Added Sidechain
+[WTO] Wrong initial fine tune value
+
+v1.99.16
+[UI]  Added indicator for knob name in overlay
+
+
+v1.99.12
+[SET] Added setting to control overlay time
+[QNT] Use of knobs to control quantiser
+
+v1.99.05 *HOTFIX*
+[INP] BUG: CV 1-4 were shifted to CV 5-8
+
+v1.99.00
+v1.31.xx
+
+[SYS] Scanning time for CV inputs reworked and improved greatly
+[SYS] Added notifications to some commands
+[SYS] Reworked problems with build system
+[INP] Fine Tune of V/OCT working now
+[WTO] Fixed error loading broken tables causing device lockup
+[MIX] Fully redone User Interface
+[SHP] Fixed problem loading longer shapes
+[WTO] Improved sound quality (less aliasing)
+[UI] Fully redone User Interface in all modules
+[PCH] Added Edit menu to modify output with ATT8 and Input with ATT1
+--
+
+v1.14.9
+[MID] MIDI was not distributed to whole Set but only available in PATCH 1
+*** [STO] Save last_patch also upon saving preset
+
+v1.14.8
+
+[DLY] Added Error on low memory
+[VCF] Added Error on low memory for Comb Filter
+[SYS] Added support for DUNE2 / DUNE3 Wavetabe (.WT) format
+[CLK] Added support for Clocks PQN setting
+[SYS] Added bypass to VCF/VCA/ECA/DLY/DST modules when they are OFF instead 
+      of silence (orange colour in Patch Menu)
+[PCH] *EXPERIMENTAL* Added Multi Patch aka Set. (Patch->Init)
+
+v1.10.37
+
+[VCF] Added basic Comb Filter (check resonance)
+[DLY] Fixed delay buffer clip problem
+[CLK] Added control screen to clock, tuned BPM generation
+[GAT] Added ability to On/Off individual gates
+[GAT] Now shows gate activity
+[MID] Fixed filtering by channel number
+[MID] Changed name of CV output to NTE (Note) from MID
+[SYS] LFS, LFO and ENV by default output to VBuf
+
+v1.9.22 *HOT FIX*
+SOMETHING WENT WRONG DURING BUILD OF UPLOAD VERSION. NO OTHER FIXES.
+
+v1.9.18 *HOT FIX*
+[SYS] Fixed problem with inputs returning 0 for No input instead of default value
+[SYS] Fixed race condition in wavetable loader (should eliminate random crash)
+
+v1.8.93
+[DLY] DELAY - New module
+[DST] Added stereo processing to distortion module
+[SYS] Inputs editor not showing values for unassignable inputs
+
+v1.8.28
+[DST] Distortion - new module
+[OUT] Reworked with display of VU Meters :)
+[OUT] Fixed problem of auto-level
+[MID] Added CV Output of Note Velocity
+[SYS] Reworked SD card reading to stop audio only on actual read
+[CVM] Fixed clamp from 0 - +1 to -1 - +1
+[VCA] Added CV Output of VCA Signal
+[ECA] Added CV Output of ECA Signal
+[MIX] Added CV Output of MIX Signal
+[WTO] Added WARP mode FM
+
+--
+v1.6.58 *HOT FIX*
+[SYS] Fixed limit on setting Clocks PQN
+[SYS] Added new setting to reverse encoder
+[SYS] Added new setting to change clocks per quarter note
+[SYS] Added new setting to disable note quantisation
+[SYS] Added new setting to enable fast SD card operation
+[SYS] Fixed decompressor for importing presets
+[WTO] Added Fine Frequency control
+[STO] Added experimental ODIN2 preset importer
+[STO] Some improvements to FXP preset importer
+
+--
+v1.4.43
+[VCF] All filters completely rewritten
+[SYS] Fixed problem with offset to notes (all notes shifted by semitone)
+[ECA] Fixed gate from CVY
+[PCH] Clear patch name after init
+[GAT] Added reset of all gates upon trigger
+[LFS] Added Bipolar mode (polarity selection in settings)
+[LFS] Inverted shape to make visual match output
+[LFS] Shapes now can be defined with JSON format (.SHJ file format)
+[VCO] Fixed FM
+[ENV] Fixed envelopes with very short release times to not trigger sustain mode
+[MID] Added MIDI module for Tamar
+[SYS] MIDI sync with Tamar ([TL] icon in status bar)
+[NOI] Added Noise module White noise with HPF and LPF to control colour
+[CVM] Added CV Mixer module
+[MLF] Module removed and filter moved into general VCF
+
+--
+v0.93.91 *EXPERIMENTAL *
+[WTO] Added wavetable editor
+[SHP] Added shape editor
+[PCH] New Save As dialog allowing selection of destination directory
+[MID] Added SysEx firmware updater over MIDI for other modules (Tamar)
+[WTO] Added splash text to show there is Wavetable Editor
+[WTO] Fixed crash in waveform renderer (out of bounds)
+[SHP] Fixed curves in shapes
+[WTO] Inputs would override Button Bar
+[PCH] Fixed memory leaks
+[WTO] Release of oscillators upon delete
+
+--
+v0.86.66
+[SET] VBufs were messed upon certain actions causing patches saved to be corrupted
+[PCH] On bootup the last patch loaded will be automatically loaded [ENABLE IN SYSTEM SETTINGS]
+
+--
+v0.86.19
+[INP] Completely rewrote input config engine
+[PCH] FXP loading was broken in previous version
+
+--
+v0.85.71
+[ENV] Fixed weird problem with Env edit limited to 3 sections
+[SHP] Added loading of Vital Shapes (.vitallfo)
+
+--
+v0.85.17
+[INP] V/OCT wasn't working as modulation source (note: V/OCT range is -3V - +8V)
+[ENV] Default ENVELOPE was curved
+[PCH] FXP presets will have also NOISE sample extracted if embedded
+[PCH] FXP now turn unused modules off
+[ENV] Added Gate Delay (linear setting 0s - 4s) to envelope trigger
+[SYS] Crash handler was missing log
+[WTO] Added Detune WT (each unison oscillator gets tiny fraction of other tables)
+[WTO] Added Glide (Portamento) between note changes
+[WTO] Added Glide Scaled - Glide lasts fraction of disatnce between frequencies (longer distance, longer glide)
+
+--
+v0.84.04
+[SYS] Changed Default wavetable to be only for WTO
+[ENV] Complete rewrite of Envelope, with full UI control of envelopes
+[SHP] Complete rewrite of Low Frequency Shaper
+[PCH] Preliminary import of FXP presets (very limited and buggy)
+
+--
+v0.80.03
+[MIX] Added Mixer (workks with 4 audio inputs)
+[BRM] Balanced Ring Modulator (works with 2 Audio Inputs)
+[SYS] Completelly rewritten engine for module inputs
+[PCH] Fixed problem with saving/loading presets
+[WTO] Added AM
+[ENV] Changed Envelope calculations. Added input control for curves on ADR
+[SMP] Manual Gate (from Menu) now works for Trigger only samples
+
+--
+v0.77.83
+[SMP] Changed sample playback engine to play single or looped samples (smaple based oscillator)
+[INP] Fixed corner case crash #34
+
+--
+v0.77.11 * EXPERIMENTAL FIX*
+If you are running version above 0.74.00 then you should update to this version.
+
+[SYS] Lowered clock for SPI bus.
+[SYS] Fixed screen blink
+
+0.75.70 *EXPERIMENTAL*
+
+*THIS IS VERY EXPERIMENTAL*
+Only difference is added Debug Crash Dump. It will save crash-dump-xxxx.bin files into crash-dump directory.
+Upon crash, please send information and crash-dump data to me.
+
+[SYS] Crash Dump Handler - dump related crash info into SD Card
+
+v0.75.24 *EXPERIMENTAL*
+
+*THIS VERSION MIGHT HAVE SIDE EFFECTS PLEASE USE 0.75.10 IF YOU ARE NOT WILLING TO TEST CHANGES IN THIS VERSION *
+
+[INP] Changed attenuators to be attenuverters
+[INP] Value of Level and Attenuverter can be set with Val or Lvl8
+[INP] Value set for Level or Att is finally working (might have random effects)
+
+
+
+v0.75.10
+[WTO] Loading wavetable problem addressed (Issue #31)
+[ENV] Envelope displays now times of envelope sections
+[SYS] Fixed colour reproduction in screenshots
+
+--
+v0.74.48 *HOTFIX*
+[ALL] Some modules have been released misconfigured
+
+v0.74.46
+[INP] Inputs were having frong reference names to other modules (Issue #29)
+[PCH] Init was not working. Restored. (Issue #32)
+[SYS] Added Delete function to Filebrowser (Issue #20)
+[SYS] Added NewDir (Create Directory) function to filebrowser
+[SYS] Fixed misbehaviour when message box is open
+[SYS] Retaining experimental settings until fully resolved (Issue #27)
+
+--
+v0.74.11 *EXPERIMENTAL*
+[SYS] Added experimental settings in system menu regarding Issue #27
+
+[https://github.com/1V-Oct/3318_the_centre_releases/issues/27]
+
+Discussion about it also in [https://discord.gg/HgsHpvqa]
+
+--
+v0.73.38 *HOTFIX*
+[INP] Octave was shifted 5 octaves down
+
+v0.73.30
+[INP] Fixed Octave input to be -8 - +8 octaves
+[GAT] Gater wasn't generating gates properly
+[GAT] Added 2Bar and 4-Bar as gate intervals
+[GAT] !!! Bug, Gete Trigger does not work, always use gate of length 1/32 minimum
+
+v0.73.11
+[PCH] Added Controllers Map
+[PCH] Using encoder browses through presets correctly now
+[SYS] Reworked input names, gives better insight
+--
+v0.72.68 *HOTFIX*
+[SYS] Added check on sample buffer overflow. No more crash on too full sample memory.
+
+v0.72.64
+[SMP] Added V/OCT control
+[SMP] Fixed loading of PCM samples
+[WTO] Fixed certain combination of wavetables
+[WTO] sync oscillators on Unison change (EXPERIMENTAL)
+[SYS] Rewrittent WAV file loader
+[SYS] Added Test Menu (Hidden in production builds)
+
+--
+v0.71.27 *HOTFIX*
+[PCH] Encorder wasn't refreshed after adding modules
+[INP] Level8 value control now only changes after rotating knob
+
+--
+v0.71.19
+[PCH] Now can go through saved presets with encoder directly
+[PCH] Fixed problem with not showing loaded patch
+[SYS] Text Input - added Del button
+[SYS] Text Input - rewrote whole character input, now 3 rows.
+--
+v0.71.00
+
+[PCH] Added patch browser
+[PCH] Fixed bug with too many patches in Add Menu
+[PCH] Added Message Box confirmation to Init Patch
+[SET] Fixed bug in settings of extending number of settungs limit
+[INP] Added Level8 control to inputs (allows setting value)
+[ENV] Fixed gray area problem
+[ENV] Added saving of envelope inside patch
+[VCA] Fixed stereo processing
+
+--
+v0.70.13
+[PCH] New Menu to navigate patches (not finished)
+[SYS] New Test firmware
+[SYS] ADC improved response
+
+v0.69.62
+[WTO] Added loading Vital exported wavetables
+[WTO] Fixed problem when the table was empty
+[BUF] Fixed assigning inputs for modules with no inputs
+
+v0.69.45
+[INF] Resolved serious issue with corrupted files on GitHub
+
+--
+v0.69.25
+[SYS] SD Card Detection and display in status bar
+
+--
+v0.68.99
+[SYS] Added user controlled calibration
+[SYS] Reset on crash instead of breakpoint
+[ENV] Fixed envolope timing
+[VCA] Renamed Ring Modulator to VCA
+
+--
+v0.63.65
+[SYS] Improved calibration (still not interactive)
+
+--
+v0.63.55
+[ENV] Fixed envelope generation
+[ENV] Changed envelope to allow retriger
+[BRM] Fixed smoothing 
+[FXP] Added preliminary loader of shapes
+[SYS] Added check of CRC32 for firmware update
+[SYS] Fixed SD card removal detection on v3 HW
+
+--
+v0.63.55
+[ENV] Fixed timing
+[SMP] Fixed sample loader
+[SYS] Fixed software updater
+[SYS] Merged all versions of hardware into single source
+[SYS] SD Card bumped read speed to 4x on v4 hardware
+
+--
+v0.61.40
+[WTO] added polyphony
+[MOD] added polyphony to handle VOCT (for now only)
+[MOD] fixed critical bug with modules inputs being mismatched
+[MOD] rewrite default system for inputs
+[SYS] added calibration and fixed calibration saving problem
+[LOG] fixed crash with long path names
+
+--
+v0.50.37
+[CV/GATE] completely reworked CVY inputs to serve only as gate/clk inputs (no voltage change detected)
+[CMP] fixed range of variables
+[RNG] changed response time to 1/64th note clock
+[INPUTS] added control over default value if no inputs (or no LVL) connected
+[INPUTS] now it is possible to scroll through all inputs with encoder without coming back
+[INPUTS] added CLK type input (preparation for HW change of CVY being only GATES/CLK)
+[SMPL] fixed corruption on loading single shot samples
+
+--
+v0.49.7
+[BRM] added smoothing option to ring modulator
+[WTO] rewrote unison and detune (sounds better)
+[WTO] added output limiter
+[CMP] compressor now can operate on stereo channels
+[CMP] fixed compressor ratio limits to prevent overflow
+[OUT] fixed output limiter to prevent clipping
+
+--
+v0.48.56
+- [CMP] added audio compressor module
+- [PATCH] fixed problem with adding and removing modules causing inputs misalignment
+- [PATCH] fixed critical error when loading and saving patch
+- [LFS] fixed problem loading shapes
+- [SETTINGS] fixed selection of buffered inputs and outputs
+- [CON] Fixed UART overflow bug 
+- [SYS] fixed memory leak on removing patch
+
+--
+v0.47.86
+- [WTO] fixed detune of unison voices
+- [WTO] rewritten oscillator to allow more parameters (prepare for FX implementation)
+- [INPUTS] added BCK button to allows coming back from input configuration with encoder only
+- [PATCH] fixed all Virtaul Audio Buffers
+- [PATCH] patch view rearranged to show module inputs and outputs
+- [BQF] fixed serious memory problem
+- [GENERAL] Cleanup and internal fixes
+- [CONSOLE] fix to handle BS properly
+
+--
+v0.47.00
+- [BQF] added selection of input and output channels
+- [BQF] added proper visualisation of magnitude response 
+- [BQF] added configurable inputs
+- [UI] added fixes in wave displays
+- [MLF] added visualisation of magnitude response
+
+--
+v0.46.27
+- [VCO/LFO] Added UI to display oscillator waveform
+- [VCO/LFO] Added 'skew' to sime oscillator
+- [VCO/LFO] Fixed PWM output of square oscillator
+
+--
+v0.45.63
+- [WAVETABLE] Improved performance of 2d wavetable display
+- [LFO] fixed reset
+- [VCO] fixed reset
+- [LFO] fixed frequency setting
+- [LFO] fixed fm and pm parameters
+- [VCO] fixed fm and pm parameters
+- [OSC] fixed square oscillator
+
+--
+v0.45.32
+- [LFS] fixed LFS output for 5V
+- [LFS] now properly cleans itself after finishing triggered module_t
+- [WTO] improved loading
+- [BRM] added Balanced Ring Modulator - modulates audoio input with CV input
+
+--
+v0.45.02
+
+- [LFS] Added Low Frequency Shaper - LFO that takes .shp files and plays them
+- [PRESET] Fixed bug that caused inputs to be messed around after loading files
+- [CLK] Fixed BPM
+
+--
+v0.41.67
+
+- [ECA] Rewrite completely to support Stereo Input / Output
+- [MLF] Rewrite to support Stereo processing
+
+--
+
+v0.41.47
+
+- [WAVETABLE] limited display of tables in 3D to 14 (seems to look better)
+- [WAVETABLE] fixed problem with "scanning" wavetables
+
+--
+
+v0.41.33
+
+- [WAVETABLE] fixed problem loading 16bit tables (half tables loaded only)
+- [WAVETABLE] 3D display should show wavetables and mark current one properly
+- [WAVETABLE] crash in wavetable changing should be resolved
+- [WAVETABLE] limit on available wavetabkles to slip through should be removed
+
+v0.41.30
+
+User side changes:
+- [WAVETABLE] Fixed another clipping issue
+- [WAVETABLE] Better 2D display of wavetables
+- [WTO] Wavetable selection instability fixed
+
+v0.41.20
+
+User side changes:
+- [WAVETABLE] fixed bug in loader causing clipping of wavetables in certain circumstances
+- [WTO] fixed big bug in Unison causing sound distortion in odd unison sequences
+
+
+v0.41.15
+
+User side changes:
+- [PRESET] Added filters for loading presets
+- [WTO] Improved detune
+- [WAVETABLE] Fixed occasional crash when loading tables
+- [WAVETABLE] Added filter for loading only WAV files
+- [WAVETABLE] Fixed bug preventing loading certain wavetables
+- [FILEBROWSER] Filtering files by type
+
+Internal changes:
+- [CONSOLE] Screenshot now saves in RGB :)
+
+
+v0.40.67
+
+User side changes:
+- [PATCH] changed name of file operations menu to 'File'
+- [PATCH] Save will open text input if no patch name
+- [PATCH] Save As will actually save patch :P
+- [GENRAL] Addec changelog
+
+Internal changes:
+- [STORAGE] fixed problem saving files >512B
+- [CONSOLE] added screenshot feature 'scr <filename>'
+- [CONSOLE] added mkdir feature 'mkdir <dirname>'
+- [CONSOLE] added ls
